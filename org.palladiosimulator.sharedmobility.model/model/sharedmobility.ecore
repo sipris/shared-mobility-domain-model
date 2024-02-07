@@ -24,5 +24,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"
         iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inspector" upperBound="-1"
+        eType="#//Inspector"/>
   </eClassifiers>
 </ecore:EPackage>
