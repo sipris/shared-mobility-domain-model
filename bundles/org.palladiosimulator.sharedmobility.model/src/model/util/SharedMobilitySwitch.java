@@ -8,6 +8,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+import tools.mdsd.modelingfoundations.identifier.Entity;
+import tools.mdsd.modelingfoundations.identifier.Identifier;
+import tools.mdsd.modelingfoundations.identifier.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,18 +72,27 @@ public class SharedMobilitySwitch<T> extends Switch<T> {
 			case SharedMobilityPackage.PASSENGER: {
 				Passenger passenger = (Passenger)theEObject;
 				T result = casePassenger(passenger);
+				if (result == null) result = caseEntity(passenger);
+				if (result == null) result = caseIdentifier(passenger);
+				if (result == null) result = caseNamedElement(passenger);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SharedMobilityPackage.INSPECTOR: {
 				Inspector inspector = (Inspector)theEObject;
 				T result = caseInspector(inspector);
+				if (result == null) result = caseEntity(inspector);
+				if (result == null) result = caseIdentifier(inspector);
+				if (result == null) result = caseNamedElement(inspector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SharedMobilityPackage.PROVIDER: {
 				Provider provider = (Provider)theEObject;
 				T result = caseProvider(provider);
+				if (result == null) result = caseEntity(provider);
+				if (result == null) result = caseIdentifier(provider);
+				if (result == null) result = caseNamedElement(provider);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -93,6 +105,9 @@ public class SharedMobilitySwitch<T> extends Switch<T> {
 			case SharedMobilityPackage.VEHICLE: {
 				Vehicle vehicle = (Vehicle)theEObject;
 				T result = caseVehicle(vehicle);
+				if (result == null) result = caseEntity(vehicle);
+				if (result == null) result = caseIdentifier(vehicle);
+				if (result == null) result = caseNamedElement(vehicle);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -172,6 +187,51 @@ public class SharedMobilitySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVehicle(Vehicle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIdentifier(Identifier object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntity(Entity object) {
 		return null;
 	}
 

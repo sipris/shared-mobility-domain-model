@@ -18,15 +18,10 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import tools.mdsd.modelingfoundations.identifier.provider.EntityItemProvider;
 
 /**
  * This is the item provider adapter for a {@link model.Vehicle} object.
@@ -35,13 +30,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class VehicleItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends EntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -64,7 +53,7 @@ public class VehicleItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addIdPropertyDescriptor(object);
+			addInspectorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,23 +81,23 @@ public class VehicleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
+	 * This adds a property descriptor for the Inspector feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIdPropertyDescriptor(Object object) {
+	protected void addInspectorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Vehicle_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Vehicle_id_feature", "_UI_Vehicle_type"),
-				 SharedMobilityPackage.Literals.VEHICLE__ID,
+				 getString("_UI_Vehicle_inspector_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Vehicle_inspector_feature", "_UI_Vehicle_type"),
+				 SharedMobilityPackage.Literals.VEHICLE__INSPECTOR,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -182,7 +171,6 @@ public class VehicleItemProvider
 
 		switch (notification.getFeatureID(Vehicle.class)) {
 			case SharedMobilityPackage.VEHICLE__NAME:
-			case SharedMobilityPackage.VEHICLE__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SharedMobilityPackage.VEHICLE__PASSENGERS:

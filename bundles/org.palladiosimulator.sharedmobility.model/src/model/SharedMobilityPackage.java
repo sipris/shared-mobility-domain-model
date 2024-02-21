@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import tools.mdsd.modelingfoundations.identifier.IdentifierPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,7 +74,16 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PASSENGER__ID = 0;
+	int PASSENGER__ID = IdentifierPackage.ENTITY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Entity Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PASSENGER__ENTITY_NAME = IdentifierPackage.ENTITY__ENTITY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>First Name</b></em>' attribute.
@@ -82,7 +92,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PASSENGER__FIRST_NAME = 1;
+	int PASSENGER__FIRST_NAME = IdentifierPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
@@ -91,7 +101,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PASSENGER__LAST_NAME = 2;
+	int PASSENGER__LAST_NAME = IdentifierPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Passenger</em>' class.
@@ -100,7 +110,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PASSENGER_FEATURE_COUNT = 3;
+	int PASSENGER_FEATURE_COUNT = IdentifierPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Passenger</em>' class.
@@ -109,7 +119,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PASSENGER_OPERATION_COUNT = 0;
+	int PASSENGER_OPERATION_COUNT = IdentifierPackage.ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link model.impl.InspectorImpl <em>Inspector</em>}' class.
@@ -128,7 +138,16 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSPECTOR__ID = 0;
+	int INSPECTOR__ID = IdentifierPackage.ENTITY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Entity Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSPECTOR__ENTITY_NAME = IdentifierPackage.ENTITY__ENTITY_NAME;
 
 	/**
 	 * The number of structural features of the '<em>Inspector</em>' class.
@@ -137,7 +156,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSPECTOR_FEATURE_COUNT = 1;
+	int INSPECTOR_FEATURE_COUNT = IdentifierPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Inspector</em>' class.
@@ -146,7 +165,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSPECTOR_OPERATION_COUNT = 0;
+	int INSPECTOR_OPERATION_COUNT = IdentifierPackage.ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link model.impl.ProviderImpl <em>Provider</em>}' class.
@@ -159,13 +178,31 @@ public interface SharedMobilityPackage extends EPackage {
 	int PROVIDER = 2;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER__ID = IdentifierPackage.ENTITY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Entity Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER__ENTITY_NAME = IdentifierPackage.ENTITY__ENTITY_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER__NAME = 0;
+	int PROVIDER__NAME = IdentifierPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Vehicle Fleet</b></em>' containment reference list.
@@ -174,7 +211,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER__VEHICLE_FLEET = 1;
+	int PROVIDER__VEHICLE_FLEET = IdentifierPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Provider</em>' class.
@@ -183,7 +220,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER_FEATURE_COUNT = 2;
+	int PROVIDER_FEATURE_COUNT = IdentifierPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Provider</em>' class.
@@ -192,7 +229,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER_OPERATION_COUNT = 0;
+	int PROVIDER_OPERATION_COUNT = IdentifierPackage.ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link model.impl.AttackerImpl <em>Attacker</em>}' class.
@@ -233,13 +270,31 @@ public interface SharedMobilityPackage extends EPackage {
 	int VEHICLE = 4;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VEHICLE__ID = IdentifierPackage.ENTITY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Entity Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VEHICLE__ENTITY_NAME = IdentifierPackage.ENTITY__ENTITY_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Passengers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VEHICLE__PASSENGERS = 0;
+	int VEHICLE__PASSENGERS = IdentifierPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -248,16 +303,16 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VEHICLE__NAME = 1;
+	int VEHICLE__NAME = IdentifierPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Inspector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VEHICLE__ID = 2;
+	int VEHICLE__INSPECTOR = IdentifierPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Vehicle</em>' class.
@@ -266,7 +321,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VEHICLE_FEATURE_COUNT = 3;
+	int VEHICLE_FEATURE_COUNT = IdentifierPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Vehicle</em>' class.
@@ -275,7 +330,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VEHICLE_OPERATION_COUNT = 0;
+	int VEHICLE_OPERATION_COUNT = IdentifierPackage.ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -287,17 +342,6 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPassenger();
-
-	/**
-	 * Returns the meta object for the attribute '{@link model.Passenger#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see model.Passenger#getId()
-	 * @see #getPassenger()
-	 * @generated
-	 */
-	EAttribute getPassenger_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link model.Passenger#getFirstName <em>First Name</em>}'.
@@ -330,17 +374,6 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getInspector();
-
-	/**
-	 * Returns the meta object for the attribute '{@link model.Inspector#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see model.Inspector#getId()
-	 * @see #getInspector()
-	 * @generated
-	 */
-	EAttribute getInspector_Id();
 
 	/**
 	 * Returns the meta object for class '{@link model.Provider <em>Provider</em>}'.
@@ -417,15 +450,15 @@ public interface SharedMobilityPackage extends EPackage {
 	EAttribute getVehicle_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link model.Vehicle#getId <em>Id</em>}'.
+	 * Returns the meta object for the reference list '{@link model.Vehicle#getInspector <em>Inspector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see model.Vehicle#getId()
+	 * @return the meta object for the reference list '<em>Inspector</em>'.
+	 * @see model.Vehicle#getInspector()
 	 * @see #getVehicle()
 	 * @generated
 	 */
-	EAttribute getVehicle_Id();
+	EReference getVehicle_Inspector();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -461,14 +494,6 @@ public interface SharedMobilityPackage extends EPackage {
 		EClass PASSENGER = eINSTANCE.getPassenger();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PASSENGER__ID = eINSTANCE.getPassenger_Id();
-
-		/**
 		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -493,14 +518,6 @@ public interface SharedMobilityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INSPECTOR = eINSTANCE.getInspector();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INSPECTOR__ID = eINSTANCE.getInspector_Id();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.ProviderImpl <em>Provider</em>}' class.
@@ -565,12 +582,12 @@ public interface SharedMobilityPackage extends EPackage {
 		EAttribute VEHICLE__NAME = eINSTANCE.getVehicle_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Inspector</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VEHICLE__ID = eINSTANCE.getVehicle_Id();
+		EReference VEHICLE__INSPECTOR = eINSTANCE.getVehicle_Inspector();
 
 	}
 

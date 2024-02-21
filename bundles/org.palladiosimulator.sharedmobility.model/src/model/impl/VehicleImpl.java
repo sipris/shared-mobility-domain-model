@@ -2,10 +2,10 @@
  */
 package model.impl;
 
-import java.math.BigInteger;
-
 import java.util.Collection;
 
+import java.util.List;
+import model.Inspector;
 import model.Passenger;
 import model.SharedMobilityPackage;
 import model.Vehicle;
@@ -19,10 +19,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import tools.mdsd.modelingfoundations.identifier.impl.EntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,12 +34,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link model.impl.VehicleImpl#getPassengers <em>Passengers</em>}</li>
  *   <li>{@link model.impl.VehicleImpl#getName <em>Name</em>}</li>
- *   <li>{@link model.impl.VehicleImpl#getId <em>Id</em>}</li>
+ *   <li>{@link model.impl.VehicleImpl#getInspector <em>Inspector</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VehicleImpl extends MinimalEObjectImpl.Container implements Vehicle {
+public class VehicleImpl extends EntityImpl implements Vehicle {
 	/**
 	 * The cached value of the '{@link #getPassengers() <em>Passengers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -71,24 +71,14 @@ public class VehicleImpl extends MinimalEObjectImpl.Container implements Vehicle
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The cached value of the '{@link #getInspector() <em>Inspector</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getInspector()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BigInteger ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigInteger id = ID_EDEFAULT;
+	protected EList<Inspector> inspector;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,7 +105,7 @@ public class VehicleImpl extends MinimalEObjectImpl.Container implements Vehicle
 	 * @generated
 	 */
 	@Override
-	public EList<Passenger> getPassengers() {
+	public List<Passenger> getPassengers() {
 		if (passengers == null) {
 			passengers = new EObjectContainmentEList<Passenger>(Passenger.class, this, SharedMobilityPackage.VEHICLE__PASSENGERS);
 		}
@@ -151,21 +141,11 @@ public class VehicleImpl extends MinimalEObjectImpl.Container implements Vehicle
 	 * @generated
 	 */
 	@Override
-	public BigInteger getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setId(BigInteger newId) {
-		BigInteger oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SharedMobilityPackage.VEHICLE__ID, oldId, id));
+	public List<Inspector> getInspector() {
+		if (inspector == null) {
+			inspector = new EObjectResolvingEList<Inspector>(Inspector.class, this, SharedMobilityPackage.VEHICLE__INSPECTOR);
+		}
+		return inspector;
 	}
 
 	/**
@@ -194,8 +174,8 @@ public class VehicleImpl extends MinimalEObjectImpl.Container implements Vehicle
 				return getPassengers();
 			case SharedMobilityPackage.VEHICLE__NAME:
 				return getName();
-			case SharedMobilityPackage.VEHICLE__ID:
-				return getId();
+			case SharedMobilityPackage.VEHICLE__INSPECTOR:
+				return getInspector();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,8 +196,9 @@ public class VehicleImpl extends MinimalEObjectImpl.Container implements Vehicle
 			case SharedMobilityPackage.VEHICLE__NAME:
 				setName((String)newValue);
 				return;
-			case SharedMobilityPackage.VEHICLE__ID:
-				setId((BigInteger)newValue);
+			case SharedMobilityPackage.VEHICLE__INSPECTOR:
+				getInspector().clear();
+				getInspector().addAll((Collection<? extends Inspector>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -237,8 +218,8 @@ public class VehicleImpl extends MinimalEObjectImpl.Container implements Vehicle
 			case SharedMobilityPackage.VEHICLE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case SharedMobilityPackage.VEHICLE__ID:
-				setId(ID_EDEFAULT);
+			case SharedMobilityPackage.VEHICLE__INSPECTOR:
+				getInspector().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -256,8 +237,8 @@ public class VehicleImpl extends MinimalEObjectImpl.Container implements Vehicle
 				return passengers != null && !passengers.isEmpty();
 			case SharedMobilityPackage.VEHICLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SharedMobilityPackage.VEHICLE__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case SharedMobilityPackage.VEHICLE__INSPECTOR:
+				return inspector != null && !inspector.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -274,8 +255,6 @@ public class VehicleImpl extends MinimalEObjectImpl.Container implements Vehicle
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", id: ");
-		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import tools.mdsd.modelingfoundations.identifier.IdentifierPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,6 +106,9 @@ public class SharedMobilityPackageImpl extends EPackageImpl implements SharedMob
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		IdentifierPackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theSharedMobilityPackage.createPackageContents();
 
@@ -135,7 +139,7 @@ public class SharedMobilityPackageImpl extends EPackageImpl implements SharedMob
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPassenger_Id() {
+	public EAttribute getPassenger_FirstName() {
 		return (EAttribute)passengerEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -145,18 +149,8 @@ public class SharedMobilityPackageImpl extends EPackageImpl implements SharedMob
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPassenger_FirstName() {
-		return (EAttribute)passengerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getPassenger_LastName() {
-		return (EAttribute)passengerEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)passengerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -167,16 +161,6 @@ public class SharedMobilityPackageImpl extends EPackageImpl implements SharedMob
 	@Override
 	public EClass getInspector() {
 		return inspectorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getInspector_Id() {
-		return (EAttribute)inspectorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -255,8 +239,8 @@ public class SharedMobilityPackageImpl extends EPackageImpl implements SharedMob
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVehicle_Id() {
-		return (EAttribute)vehicleEClass.getEStructuralFeatures().get(2);
+	public EReference getVehicle_Inspector() {
+		return (EReference)vehicleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -289,12 +273,10 @@ public class SharedMobilityPackageImpl extends EPackageImpl implements SharedMob
 
 		// Create classes and their features
 		passengerEClass = createEClass(PASSENGER);
-		createEAttribute(passengerEClass, PASSENGER__ID);
 		createEAttribute(passengerEClass, PASSENGER__FIRST_NAME);
 		createEAttribute(passengerEClass, PASSENGER__LAST_NAME);
 
 		inspectorEClass = createEClass(INSPECTOR);
-		createEAttribute(inspectorEClass, INSPECTOR__ID);
 
 		providerEClass = createEClass(PROVIDER);
 		createEAttribute(providerEClass, PROVIDER__NAME);
@@ -305,7 +287,7 @@ public class SharedMobilityPackageImpl extends EPackageImpl implements SharedMob
 		vehicleEClass = createEClass(VEHICLE);
 		createEReference(vehicleEClass, VEHICLE__PASSENGERS);
 		createEAttribute(vehicleEClass, VEHICLE__NAME);
-		createEAttribute(vehicleEClass, VEHICLE__ID);
+		createEReference(vehicleEClass, VEHICLE__INSPECTOR);
 	}
 
 	/**
@@ -331,20 +313,25 @@ public class SharedMobilityPackageImpl extends EPackageImpl implements SharedMob
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		passengerEClass.getESuperTypes().add(theIdentifierPackage.getEntity());
+		inspectorEClass.getESuperTypes().add(theIdentifierPackage.getEntity());
+		providerEClass.getESuperTypes().add(theIdentifierPackage.getEntity());
+		vehicleEClass.getESuperTypes().add(theIdentifierPackage.getEntity());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(passengerEClass, Passenger.class, "Passenger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPassenger_Id(), ecorePackage.getEBigInteger(), "id", null, 0, 1, Passenger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPassenger_FirstName(), ecorePackage.getEString(), "firstName", null, 0, 1, Passenger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPassenger_LastName(), ecorePackage.getEString(), "lastName", null, 0, 1, Passenger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inspectorEClass, Inspector.class, "Inspector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInspector_Id(), ecorePackage.getEBigInteger(), "id", null, 0, 1, Inspector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(providerEClass, Provider.class, "Provider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProvider_Name(), ecorePackage.getEString(), "name", null, 0, 1, Provider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -355,7 +342,7 @@ public class SharedMobilityPackageImpl extends EPackageImpl implements SharedMob
 		initEClass(vehicleEClass, Vehicle.class, "Vehicle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVehicle_Passengers(), this.getPassenger(), null, "passengers", null, 0, -1, Vehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVehicle_Name(), ecorePackage.getEString(), "name", null, 0, 1, Vehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVehicle_Id(), ecorePackage.getEBigInteger(), "id", null, 0, 1, Vehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVehicle_Inspector(), this.getInspector(), null, "inspector", null, 0, -1, Vehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

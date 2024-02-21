@@ -2,9 +2,8 @@
  */
 package model;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
+import java.util.List;
+import tools.mdsd.modelingfoundations.identifier.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Provider extends EObject {
+public interface Provider extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -56,6 +55,6 @@ public interface Provider extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Vehicle> getVehicleFleet();
+	List<Vehicle> getVehicleFleet();
 
 } // Provider

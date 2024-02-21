@@ -7,6 +7,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import tools.mdsd.modelingfoundations.identifier.provider.ModelEditPlugin;
 
 /**
  * This is the central singleton for the SharedMobility editor plugin.
@@ -40,6 +41,7 @@ public final class SharedMobilityEditorPlugin extends EMFPlugin {
 	public SharedMobilityEditorPlugin() {
 		super
 			(new ResourceLocator [] {
+				ModelEditPlugin.INSTANCE,
 			});
 	}
 

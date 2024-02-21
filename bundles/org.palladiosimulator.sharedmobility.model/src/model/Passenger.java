@@ -2,9 +2,7 @@
  */
 package model;
 
-import java.math.BigInteger;
-
-import org.eclipse.emf.ecore.EObject;
+import tools.mdsd.modelingfoundations.identifier.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link model.Passenger#getId <em>Id</em>}</li>
  *   <li>{@link model.Passenger#getFirstName <em>First Name</em>}</li>
  *   <li>{@link model.Passenger#getLastName <em>Last Name</em>}</li>
  * </ul>
@@ -24,29 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Passenger extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(BigInteger)
-	 * @see model.SharedMobilityPackage#getPassenger_Id()
-	 * @model id="true"
-	 * @generated
-	 */
-	BigInteger getId();
-
-	/**
-	 * Sets the value of the '{@link model.Passenger#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(BigInteger value);
-
+public interface Passenger extends Entity {
 	/**
 	 * Returns the value of the '<em><b>First Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

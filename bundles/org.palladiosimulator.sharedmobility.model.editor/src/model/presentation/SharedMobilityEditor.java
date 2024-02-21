@@ -158,6 +158,7 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import model.provider.SharedMobilityItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import tools.mdsd.modelingfoundations.identifier.provider.IdentifierItemProviderAdapterFactory;
 
 
 /**
@@ -711,6 +712,7 @@ public class SharedMobilityEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SharedMobilityItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

@@ -4,6 +4,7 @@ package model.impl;
 
 import java.util.Collection;
 
+import java.util.List;
 import model.Provider;
 import model.SharedMobilityPackage;
 import model.Vehicle;
@@ -17,10 +18,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import tools.mdsd.modelingfoundations.identifier.impl.EntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ProviderImpl extends MinimalEObjectImpl.Container implements Provider {
+public class ProviderImpl extends EntityImpl implements Provider {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -115,7 +115,7 @@ public class ProviderImpl extends MinimalEObjectImpl.Container implements Provid
 	 * @generated
 	 */
 	@Override
-	public EList<Vehicle> getVehicleFleet() {
+	public List<Vehicle> getVehicleFleet() {
 		if (vehicleFleet == null) {
 			vehicleFleet = new EObjectContainmentEList<Vehicle>(Vehicle.class, this, SharedMobilityPackage.PROVIDER__VEHICLE_FLEET);
 		}
