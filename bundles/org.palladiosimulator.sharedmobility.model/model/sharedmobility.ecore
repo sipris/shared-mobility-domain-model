@@ -10,14 +10,26 @@
   <eClassifiers xsi:type="ecore:EClass" name="Provider" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vehicleFleet" upperBound="-1"
-        eType="#//Vehicle" containment="true"/>
+        eType="#//Vehicle"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attacker"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Attacker" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
   <eClassifiers xsi:type="ecore:EClass" name="Vehicle" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="passengers" upperBound="-1"
-        eType="#//Passenger" containment="true"/>
+        eType="#//Passenger"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inspector" upperBound="-1"
         eType="#//Inspector"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Domain">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="passenger" upperBound="-1"
+        eType="#//Passenger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vehicle" upperBound="-1"
+        eType="#//Vehicle" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inspector" upperBound="-1"
+        eType="#//Inspector" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attacker" upperBound="-1"
+        eType="#//Attacker" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provider" upperBound="-1"
+        eType="#//Provider" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
