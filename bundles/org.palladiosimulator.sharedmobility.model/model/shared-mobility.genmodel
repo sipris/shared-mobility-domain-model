@@ -23,5 +23,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sharedmobility.ecore#//Vehicle/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sharedmobility.ecore#//Vehicle/inspector"/>
     </genClasses>
+    <genClasses ecoreClass="sharedmobility.ecore#//Domain">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sharedmobility.ecore#//Domain/passenger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sharedmobility.ecore#//Domain/vehicle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sharedmobility.ecore#//Domain/inspector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sharedmobility.ecore#//Domain/attacker"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sharedmobility.ecore#//Domain/provider"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

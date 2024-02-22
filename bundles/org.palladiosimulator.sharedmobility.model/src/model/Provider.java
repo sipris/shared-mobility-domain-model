@@ -46,13 +46,13 @@ public interface Provider extends Entity {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Vehicle Fleet</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Vehicle Fleet</b></em>' reference list.
 	 * The list contents are of type {@link model.Vehicle}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Vehicle Fleet</em>' containment reference list.
+	 * @return the value of the '<em>Vehicle Fleet</em>' reference list.
 	 * @see model.SharedMobilityPackage#getProvider_VehicleFleet()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	List<Vehicle> getVehicleFleet();

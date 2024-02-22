@@ -187,6 +187,29 @@ public class SharedMobilityItemProviderAdapterFactory extends SharedMobilityAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link model.Domain} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DomainItemProvider domainItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link model.Domain}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDomainAdapter() {
+		if (domainItemProvider == null) {
+			domainItemProvider = new DomainItemProvider(this);
+		}
+
+		return domainItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -296,6 +319,7 @@ public class SharedMobilityItemProviderAdapterFactory extends SharedMobilityAdap
 		if (providerItemProvider != null) providerItemProvider.dispose();
 		if (attackerItemProvider != null) attackerItemProvider.dispose();
 		if (vehicleItemProvider != null) vehicleItemProvider.dispose();
+		if (domainItemProvider != null) domainItemProvider.dispose();
 	}
 
 }

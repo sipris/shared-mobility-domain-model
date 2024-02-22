@@ -99,6 +99,9 @@ public class SharedMobilitySwitch<T> extends Switch<T> {
 			case SharedMobilityPackage.ATTACKER: {
 				Attacker attacker = (Attacker)theEObject;
 				T result = caseAttacker(attacker);
+				if (result == null) result = caseEntity(attacker);
+				if (result == null) result = caseIdentifier(attacker);
+				if (result == null) result = caseNamedElement(attacker);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -108,6 +111,12 @@ public class SharedMobilitySwitch<T> extends Switch<T> {
 				if (result == null) result = caseEntity(vehicle);
 				if (result == null) result = caseIdentifier(vehicle);
 				if (result == null) result = caseNamedElement(vehicle);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SharedMobilityPackage.DOMAIN: {
+				Domain domain = (Domain)theEObject;
+				T result = caseDomain(domain);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -187,6 +196,21 @@ public class SharedMobilitySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVehicle(Vehicle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Domain</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Domain</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDomain(Domain object) {
 		return null;
 	}
 

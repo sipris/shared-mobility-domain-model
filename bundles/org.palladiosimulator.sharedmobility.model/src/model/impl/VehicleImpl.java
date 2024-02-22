@@ -11,17 +11,11 @@ import model.SharedMobilityPackage;
 import model.Vehicle;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 import tools.mdsd.modelingfoundations.identifier.impl.EntityImpl;
 
 /**
@@ -41,7 +35,7 @@ import tools.mdsd.modelingfoundations.identifier.impl.EntityImpl;
  */
 public class VehicleImpl extends EntityImpl implements Vehicle {
 	/**
-	 * The cached value of the '{@link #getPassengers() <em>Passengers</em>}' containment reference list.
+	 * The cached value of the '{@link #getPassengers() <em>Passengers</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPassengers()
@@ -107,7 +101,7 @@ public class VehicleImpl extends EntityImpl implements Vehicle {
 	@Override
 	public List<Passenger> getPassengers() {
 		if (passengers == null) {
-			passengers = new EObjectContainmentEList<Passenger>(Passenger.class, this, SharedMobilityPackage.VEHICLE__PASSENGERS);
+			passengers = new EObjectResolvingEList<Passenger>(Passenger.class, this, SharedMobilityPackage.VEHICLE__PASSENGERS);
 		}
 		return passengers;
 	}
@@ -146,20 +140,6 @@ public class VehicleImpl extends EntityImpl implements Vehicle {
 			inspector = new EObjectResolvingEList<Inspector>(Inspector.class, this, SharedMobilityPackage.VEHICLE__INSPECTOR);
 		}
 		return inspector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case SharedMobilityPackage.VEHICLE__PASSENGERS:
-				return ((InternalEList<?>)getPassengers()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

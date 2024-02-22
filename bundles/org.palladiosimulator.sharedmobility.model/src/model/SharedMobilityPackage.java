@@ -205,7 +205,7 @@ public interface SharedMobilityPackage extends EPackage {
 	int PROVIDER__NAME = IdentifierPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Vehicle Fleet</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Vehicle Fleet</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -242,13 +242,31 @@ public interface SharedMobilityPackage extends EPackage {
 	int ATTACKER = 3;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACKER__ID = IdentifierPackage.ENTITY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Entity Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACKER__ENTITY_NAME = IdentifierPackage.ENTITY__ENTITY_NAME;
+
+	/**
 	 * The number of structural features of the '<em>Attacker</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACKER_FEATURE_COUNT = 0;
+	int ATTACKER_FEATURE_COUNT = IdentifierPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Attacker</em>' class.
@@ -257,7 +275,7 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACKER_OPERATION_COUNT = 0;
+	int ATTACKER_OPERATION_COUNT = IdentifierPackage.ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link model.impl.VehicleImpl <em>Vehicle</em>}' class.
@@ -288,7 +306,7 @@ public interface SharedMobilityPackage extends EPackage {
 	int VEHICLE__ENTITY_NAME = IdentifierPackage.ENTITY__ENTITY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Passengers</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Passengers</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -331,6 +349,80 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @ordered
 	 */
 	int VEHICLE_OPERATION_COUNT = IdentifierPackage.ENTITY_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link model.impl.DomainImpl <em>Domain</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.DomainImpl
+	 * @see model.impl.SharedMobilityPackageImpl#getDomain()
+	 * @generated
+	 */
+	int DOMAIN = 5;
+
+	/**
+	 * The feature id for the '<em><b>Passenger</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__PASSENGER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Vehicle</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__VEHICLE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Inspector</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__INSPECTOR = 2;
+
+	/**
+	 * The feature id for the '<em><b>Attacker</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__ATTACKER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Provider</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__PROVIDER = 4;
+
+	/**
+	 * The number of structural features of the '<em>Domain</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Domain</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN_OPERATION_COUNT = 0;
 
 
 	/**
@@ -397,10 +489,10 @@ public interface SharedMobilityPackage extends EPackage {
 	EAttribute getProvider_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link model.Provider#getVehicleFleet <em>Vehicle Fleet</em>}'.
+	 * Returns the meta object for the reference list '{@link model.Provider#getVehicleFleet <em>Vehicle Fleet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Vehicle Fleet</em>'.
+	 * @return the meta object for the reference list '<em>Vehicle Fleet</em>'.
 	 * @see model.Provider#getVehicleFleet()
 	 * @see #getProvider()
 	 * @generated
@@ -428,10 +520,10 @@ public interface SharedMobilityPackage extends EPackage {
 	EClass getVehicle();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link model.Vehicle#getPassengers <em>Passengers</em>}'.
+	 * Returns the meta object for the reference list '{@link model.Vehicle#getPassengers <em>Passengers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Passengers</em>'.
+	 * @return the meta object for the reference list '<em>Passengers</em>'.
 	 * @see model.Vehicle#getPassengers()
 	 * @see #getVehicle()
 	 * @generated
@@ -459,6 +551,71 @@ public interface SharedMobilityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVehicle_Inspector();
+
+	/**
+	 * Returns the meta object for class '{@link model.Domain <em>Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Domain</em>'.
+	 * @see model.Domain
+	 * @generated
+	 */
+	EClass getDomain();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Domain#getPassenger <em>Passenger</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Passenger</em>'.
+	 * @see model.Domain#getPassenger()
+	 * @see #getDomain()
+	 * @generated
+	 */
+	EReference getDomain_Passenger();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Domain#getVehicle <em>Vehicle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Vehicle</em>'.
+	 * @see model.Domain#getVehicle()
+	 * @see #getDomain()
+	 * @generated
+	 */
+	EReference getDomain_Vehicle();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Domain#getInspector <em>Inspector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Inspector</em>'.
+	 * @see model.Domain#getInspector()
+	 * @see #getDomain()
+	 * @generated
+	 */
+	EReference getDomain_Inspector();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Domain#getAttacker <em>Attacker</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attacker</em>'.
+	 * @see model.Domain#getAttacker()
+	 * @see #getDomain()
+	 * @generated
+	 */
+	EReference getDomain_Attacker();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Domain#getProvider <em>Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Provider</em>'.
+	 * @see model.Domain#getProvider()
+	 * @see #getDomain()
+	 * @generated
+	 */
+	EReference getDomain_Provider();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -538,7 +695,7 @@ public interface SharedMobilityPackage extends EPackage {
 		EAttribute PROVIDER__NAME = eINSTANCE.getProvider_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Vehicle Fleet</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Vehicle Fleet</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -566,7 +723,7 @@ public interface SharedMobilityPackage extends EPackage {
 		EClass VEHICLE = eINSTANCE.getVehicle();
 
 		/**
-		 * The meta object literal for the '<em><b>Passengers</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Passengers</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -588,6 +745,56 @@ public interface SharedMobilityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VEHICLE__INSPECTOR = eINSTANCE.getVehicle_Inspector();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.DomainImpl <em>Domain</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.DomainImpl
+		 * @see model.impl.SharedMobilityPackageImpl#getDomain()
+		 * @generated
+		 */
+		EClass DOMAIN = eINSTANCE.getDomain();
+
+		/**
+		 * The meta object literal for the '<em><b>Passenger</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOMAIN__PASSENGER = eINSTANCE.getDomain_Passenger();
+
+		/**
+		 * The meta object literal for the '<em><b>Vehicle</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOMAIN__VEHICLE = eINSTANCE.getDomain_Vehicle();
+
+		/**
+		 * The meta object literal for the '<em><b>Inspector</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOMAIN__INSPECTOR = eINSTANCE.getDomain_Inspector();
+
+		/**
+		 * The meta object literal for the '<em><b>Attacker</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOMAIN__ATTACKER = eINSTANCE.getDomain_Attacker();
+
+		/**
+		 * The meta object literal for the '<em><b>Provider</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOMAIN__PROVIDER = eINSTANCE.getDomain_Provider();
 
 	}
 

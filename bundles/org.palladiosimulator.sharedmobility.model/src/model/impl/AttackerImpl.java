@@ -5,8 +5,7 @@ package model.impl;
 import model.Attacker;
 import model.SharedMobilityPackage;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import tools.mdsd.modelingfoundations.identifier.impl.EntityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class AttackerImpl extends MinimalEObjectImpl.Container implements Attacker {
+public class AttackerImpl extends EntityImpl implements Attacker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

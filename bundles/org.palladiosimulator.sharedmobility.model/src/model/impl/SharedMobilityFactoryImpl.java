@@ -61,6 +61,7 @@ public class SharedMobilityFactoryImpl extends EFactoryImpl implements SharedMob
 			case SharedMobilityPackage.PROVIDER: return createProvider();
 			case SharedMobilityPackage.ATTACKER: return createAttacker();
 			case SharedMobilityPackage.VEHICLE: return createVehicle();
+			case SharedMobilityPackage.DOMAIN: return createDomain();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -119,6 +120,17 @@ public class SharedMobilityFactoryImpl extends EFactoryImpl implements SharedMob
 	public Vehicle createVehicle() {
 		VehicleImpl vehicle = new VehicleImpl();
 		return vehicle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Domain createDomain() {
+		DomainImpl domain = new DomainImpl();
+		return domain;
 	}
 
 	/**

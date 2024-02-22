@@ -2,7 +2,7 @@
  */
 package model;
 
-import org.eclipse.emf.ecore.EObject;
+import tools.mdsd.modelingfoundations.identifier.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Attacker extends EObject {
+public interface Attacker extends Entity {
 } // Attacker

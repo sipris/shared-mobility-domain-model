@@ -25,13 +25,13 @@ import tools.mdsd.modelingfoundations.identifier.Entity;
  */
 public interface Vehicle extends Entity {
 	/**
-	 * Returns the value of the '<em><b>Passengers</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Passengers</b></em>' reference list.
 	 * The list contents are of type {@link model.Passenger}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Passengers</em>' containment reference list.
+	 * @return the value of the '<em>Passengers</em>' reference list.
 	 * @see model.SharedMobilityPackage#getVehicle_Passengers()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	List<Passenger> getPassengers();

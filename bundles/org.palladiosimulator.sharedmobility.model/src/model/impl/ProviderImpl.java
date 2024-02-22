@@ -10,16 +10,11 @@ import model.SharedMobilityPackage;
 import model.Vehicle;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import tools.mdsd.modelingfoundations.identifier.impl.EntityImpl;
 
 /**
@@ -58,7 +53,7 @@ public class ProviderImpl extends EntityImpl implements Provider {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getVehicleFleet() <em>Vehicle Fleet</em>}' containment reference list.
+	 * The cached value of the '{@link #getVehicleFleet() <em>Vehicle Fleet</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVehicleFleet()
@@ -117,23 +112,9 @@ public class ProviderImpl extends EntityImpl implements Provider {
 	@Override
 	public List<Vehicle> getVehicleFleet() {
 		if (vehicleFleet == null) {
-			vehicleFleet = new EObjectContainmentEList<Vehicle>(Vehicle.class, this, SharedMobilityPackage.PROVIDER__VEHICLE_FLEET);
+			vehicleFleet = new EObjectResolvingEList<Vehicle>(Vehicle.class, this, SharedMobilityPackage.PROVIDER__VEHICLE_FLEET);
 		}
 		return vehicleFleet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case SharedMobilityPackage.PROVIDER__VEHICLE_FLEET:
-				return ((InternalEList<?>)getVehicleFleet()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
