@@ -5,6 +5,7 @@ package model.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import tools.mdsd.modelingfoundations.identifier.provider.ModelEditPlugin;
 
 /**

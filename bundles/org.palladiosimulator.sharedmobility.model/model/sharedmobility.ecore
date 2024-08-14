@@ -2,34 +2,52 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://org/palladiosimulator/sharedmobility/model"
     nsPrefix="org.palladiosimulator.sharedmobility.model">
-  <eClassifiers xsi:type="ecore:EClass" name="Passenger" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="Participant" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity #//NetworkCommunicator #//DirectCommunicator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Inspector" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Provider" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="Driver" eSuperTypes="#//Participant">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drives" eType="#//Vehicle"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User" eSuperTypes="#//Participant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Attacker" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Vehicle" abstract="true" eSuperTypes="#//DirectCommunicator ../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Identifier #//NetworkCommunicator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="passengers" upperBound="-1"
+        eType="#//User"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vehicleFleet" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="driver" eType="#//Driver"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalOptions" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Car" eSuperTypes="#//Vehicle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Van" eSuperTypes="#//Vehicle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MobilityServiceProvider" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drivers" upperBound="-1"
+        eType="#//Driver"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fleet" upperBound="-1"
         eType="#//Vehicle"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attacker" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Vehicle" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="passengers" upperBound="-1"
-        eType="#//Passenger"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inspector" upperBound="-1"
-        eType="#//Inspector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RidePoolingProvider" eSuperTypes="#//MobilityServiceProvider"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CarpoolingProvider" eSuperTypes="#//MobilityServiceProvider"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReservationService_"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PaymentService_"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FleetMaintainigService_"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RegistrationService_"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MatchingService_"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicAgency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managedRoadsideUnits" upperBound="-1"
+        eType="#//RoadsideUnit"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Domain">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="passenger" upperBound="-1"
-        eType="#//Passenger" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vehicle" upperBound="-1"
-        eType="#//Vehicle" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inspector" upperBound="-1"
-        eType="#//Inspector" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attacker" upperBound="-1"
-        eType="#//Attacker" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="provider" upperBound="-1"
-        eType="#//Provider" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RoadsideUnit" abstract="true" eSuperTypes="#//DirectCommunicator #//NetworkCommunicator ../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Identifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TraficLight" eSuperTypes="#//RoadsideUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SpeedLimit" eSuperTypes="#//RoadsideUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkConnector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectCommunicator" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connections" upperBound="-1"
+        eType="#//DirectCommunicator"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkCommunicator" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Services"/>
 </ecore:EPackage>

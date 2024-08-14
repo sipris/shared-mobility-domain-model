@@ -7,10 +7,10 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated shared-mobility -->
+      <!-- @generated sharedmobility -->
       <factory
             uri="http://org/palladiosimulator/sharedmobility/model"
-            class="model.provider.SharedMobilityItemProviderAdapterFactory"
+            class="org.palladiosimulator.sharedmobility.model.model.provider.SharedmobilityModelItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

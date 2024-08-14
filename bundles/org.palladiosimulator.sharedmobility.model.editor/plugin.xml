@@ -7,30 +7,30 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated shared-mobility -->
+      <!-- @generated sharedmobility -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="model.presentation.SharedMobilityModelWizardID"
-            name="%_UI_SharedMobilityModelWizard_label"
-            class="model.presentation.SharedMobilityModelWizard"
+            id="org.palladiosimulator.sharedmobility.model.model.presentation.SharedmobilityModelModelWizardID"
+            name="%_UI_SharedmobilityModelModelWizard_label"
+            class="org.palladiosimulator.sharedmobility.model.model.presentation.SharedmobilityModelModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/SharedMobilityModelFile.gif">
-         <description>%_UI_SharedMobilityModelWizard_description</description>
+            icon="icons/full/obj16/SharedmobilityModelModelFile.gif">
+         <description>%_UI_SharedmobilityModelModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated shared-mobility -->
+      <!-- @generated sharedmobility -->
       <editor
-            id="model.presentation.SharedMobilityEditorID"
-            name="%_UI_SharedMobilityEditor_label"
-            icon="icons/full/obj16/SharedMobilityModelFile.gif"
-            extensions="sharedmobility"
-            class="model.presentation.SharedMobilityEditor"
-            contributorClass="model.presentation.SharedMobilityActionBarContributor">
+            id="org.palladiosimulator.sharedmobility.model.model.presentation.SharedmobilityModelEditorID"
+            name="%_UI_SharedmobilityModelEditor_label"
+            icon="icons/full/obj16/SharedmobilityModelModelFile.gif"
+            extensions="sharedmobilitymodel"
+            class="org.palladiosimulator.sharedmobility.model.model.presentation.SharedmobilityModelEditor"
+            contributorClass="org.palladiosimulator.sharedmobility.model.model.presentation.SharedmobilityModelActionBarContributor">
       </editor>
    </extension>
 </plugin>
