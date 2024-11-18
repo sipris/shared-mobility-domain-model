@@ -9,7 +9,10 @@ Bundle-Activator: org.sharedmobility.domainmodel.smdm.provider.SmdmEditPlugin$Im
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.sharedmobility.domainmodel.smdm.provider
+Export-Package: identifier.provider,
+ org.sharedmobility.domainmodel.smdm.communication.provider,
+ org.sharedmobility.domainmodel.smdm.metamodel.provider,
+ org.sharedmobility.domainmodel.smdm.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.sharedmobility.domainmodel;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport

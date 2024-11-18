@@ -2,7 +2,10 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="smdm" nsURI="https://github.com/sipris/shared-mobility-domain-model/"
     nsPrefix="smdm">
-  <eClassifiers xsi:type="ecore:EClass" name="Domain"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Domain">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participant" upperBound="-1"
+        eType="#//metamodel/Participant" containment="true"/>
+  </eClassifiers>
   <eSubpackages name="communication" nsURI="org.sharedmobility.domainmodel.communication"
       nsPrefix="communication">
     <eClassifiers xsi:type="ecore:EClass" name="NetworkCommunicator" abstract="true"
@@ -10,6 +13,14 @@
     <eClassifiers xsi:type="ecore:EClass" name="NetworkConnector" abstract="true"
         interface="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="DirectCommunicator" abstract="true"
-        interface="true"/>
+        interface="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="communicationParticipants"
+          upperBound="-1" eType="#//communication/DirectCommunicator"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="metamodel" nsURI="org.sharedmobility.domainmodel.base.metamodel"
+      nsPrefix="base.metamodel">
+    <eClassifiers xsi:type="ecore:EClass" name="Participant" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity #//communication/NetworkCommunicator #//communication/DirectCommunicator"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Vehicle" eSuperTypes="#//communication/DirectCommunicator #//communication/NetworkCommunicator ../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
   </eSubpackages>
 </ecore:EPackage>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.sharedmobility.domainmodel/src" creationIcons="false"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.sharedmobility.domainmodel/src" creationIcons="false"
     editDirectory="/org.sharedmobility.domainmodel.edit/src" editorDirectory="/org.sharedmobility.domainmodel.editor/src"
     modelPluginID="org.sharedmobility.domainmodel" modelName="Smdm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     suppressEMFTypes="true" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
@@ -9,6 +10,29 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Smdm" basePackage="org.sharedmobility.domainmodel" disposableProviderFactory="true"
       ecorePackage="smdm.ecore#/">
-    <genClasses ecoreClass="smdm.ecore#//Domain"/>
+    <genClasses ecoreClass="smdm.ecore#//Domain">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smdm.ecore#//Domain/participant"/>
+    </genClasses>
+    <nestedGenPackages prefix="Communication" disposableProviderFactory="true" ecorePackage="smdm.ecore#//communication">
+      <genClasses image="false" ecoreClass="smdm.ecore#//communication/NetworkCommunicator"/>
+      <genClasses image="false" ecoreClass="smdm.ecore#//communication/NetworkConnector"/>
+      <genClasses image="false" ecoreClass="smdm.ecore#//communication/DirectCommunicator">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference smdm.ecore#//communication/DirectCommunicator/communicationParticipants"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Metamodel" disposableProviderFactory="true" ecorePackage="smdm.ecore#//metamodel">
+      <genClasses ecoreClass="smdm.ecore#//metamodel/Participant"/>
+      <genClasses ecoreClass="smdm.ecore#//metamodel/Vehicle"/>
+    </nestedGenPackages>
+  </genPackages>
+  <genPackages prefix="Identifier" ecorePackage="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#/">
+    <genClasses image="false" ecoreClass="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Identifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Identifier/id"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//NamedElement/entityName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
   </genPackages>
 </genmodel:GenModel>

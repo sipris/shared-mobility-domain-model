@@ -9,7 +9,8 @@ Bundle-Activator: org.sharedmobility.domainmodel.smdm.presentation.SmdmEditorPlu
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.sharedmobility.domainmodel.smdm.presentation
+Export-Package: org.sharedmobility.domainmodel.smdm.metamodel.presentation,
+ org.sharedmobility.domainmodel.smdm.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.sharedmobility.domainmodel.edit;visibility:=reexport,

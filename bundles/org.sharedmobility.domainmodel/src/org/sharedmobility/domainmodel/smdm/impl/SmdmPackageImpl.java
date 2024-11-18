@@ -2,14 +2,21 @@
  */
 package org.sharedmobility.domainmodel.smdm.impl;
 
+import identifier.IdentifierPackage;
+import identifier.impl.IdentifierPackageImpl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.sharedmobility.domainmodel.smdm.Domain;
 import org.sharedmobility.domainmodel.smdm.SmdmFactory;
 import org.sharedmobility.domainmodel.smdm.SmdmPackage;
+import org.sharedmobility.domainmodel.smdm.communication.CommunicationPackage;
+import org.sharedmobility.domainmodel.smdm.communication.impl.CommunicationPackageImpl;
+import org.sharedmobility.domainmodel.smdm.metamodel.MetamodelPackage;
+import org.sharedmobility.domainmodel.smdm.metamodel.impl.MetamodelPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -75,11 +82,31 @@ public class SmdmPackageImpl extends EPackageImpl implements SmdmPackage {
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
+		CommunicationPackageImpl theCommunicationPackage = (CommunicationPackageImpl) (registeredPackage instanceof CommunicationPackageImpl
+				? registeredPackage
+				: CommunicationPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MetamodelPackage.eNS_URI);
+		MetamodelPackageImpl theMetamodelPackage = (MetamodelPackageImpl) (registeredPackage instanceof MetamodelPackageImpl
+				? registeredPackage
+				: MetamodelPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
+		IdentifierPackageImpl theIdentifierPackage = (IdentifierPackageImpl) (registeredPackage instanceof IdentifierPackageImpl
+				? registeredPackage
+				: IdentifierPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theSmdmPackage.createPackageContents();
+		theCommunicationPackage.createPackageContents();
+		theMetamodelPackage.createPackageContents();
+		theIdentifierPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theSmdmPackage.initializePackageContents();
+		theCommunicationPackage.initializePackageContents();
+		theMetamodelPackage.initializePackageContents();
+		theIdentifierPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theSmdmPackage.freeze();
@@ -96,6 +123,15 @@ public class SmdmPackageImpl extends EPackageImpl implements SmdmPackage {
 	 */
 	public EClass getDomain() {
 		return domainEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDomain_Participant() {
+		return (EReference) domainEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -128,6 +164,7 @@ public class SmdmPackageImpl extends EPackageImpl implements SmdmPackage {
 
 		// Create classes and their features
 		domainEClass = createEClass(DOMAIN);
+		createEReference(domainEClass, DOMAIN__PARTICIPANT);
 	}
 
 	/**
@@ -154,6 +191,16 @@ public class SmdmPackageImpl extends EPackageImpl implements SmdmPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		CommunicationPackage theCommunicationPackage = (CommunicationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(CommunicationPackage.eNS_URI);
+		MetamodelPackage theMetamodelPackage = (MetamodelPackage) EPackage.Registry.INSTANCE
+				.getEPackage(MetamodelPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theCommunicationPackage);
+		getESubpackages().add(theMetamodelPackage);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -162,6 +209,9 @@ public class SmdmPackageImpl extends EPackageImpl implements SmdmPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDomain_Participant(), theMetamodelPackage.getParticipant(), null, "participant", null, 0, -1,
+				Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

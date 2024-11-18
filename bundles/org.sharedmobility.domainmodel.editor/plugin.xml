@@ -34,4 +34,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated smdm -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.sharedmobility.domainmodel.smdm.metamodel.presentation.MetamodelModelWizardID"
+            name="%_UI_MetamodelModelWizard_label"
+            class="org.sharedmobility.domainmodel.smdm.metamodel.presentation.MetamodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MetamodelModelFile.gif">
+         <description>%_UI_MetamodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated smdm -->
+      <editor
+            id="org.sharedmobility.domainmodel.smdm.metamodel.presentation.MetamodelEditorID"
+            name="%_UI_MetamodelEditor_label"
+            icon="icons/full/obj16/MetamodelModelFile.gif"
+            extensions="metamodel"
+            class="org.sharedmobility.domainmodel.smdm.metamodel.presentation.MetamodelEditor"
+            contributorClass="org.sharedmobility.domainmodel.smdm.metamodel.presentation.MetamodelActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

@@ -4,6 +4,7 @@ package org.sharedmobility.domainmodel.smdm;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,13 +66,22 @@ public interface SmdmPackage extends EPackage {
 	int DOMAIN = 0;
 
 	/**
+	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__PARTICIPANT = 0;
+
+	/**
 	 * The number of structural features of the '<em>Domain</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_FEATURE_COUNT = 0;
+	int DOMAIN_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Domain</em>' class.
@@ -91,6 +101,17 @@ public interface SmdmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDomain();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.sharedmobility.domainmodel.smdm.Domain#getParticipant <em>Participant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Participant</em>'.
+	 * @see org.sharedmobility.domainmodel.smdm.Domain#getParticipant()
+	 * @see #getDomain()
+	 * @generated
+	 */
+	EReference getDomain_Participant();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -124,6 +145,13 @@ public interface SmdmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DOMAIN = eINSTANCE.getDomain();
+		/**
+		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOMAIN__PARTICIPANT = eINSTANCE.getDomain_Participant();
 
 	}
 

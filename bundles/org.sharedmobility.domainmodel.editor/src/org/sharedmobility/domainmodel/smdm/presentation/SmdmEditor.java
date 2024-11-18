@@ -155,7 +155,10 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import org.sharedmobility.domainmodel.smdm.provider.SmdmItemProviderAdapterFactory;
 
+import identifier.provider.IdentifierItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.sharedmobility.domainmodel.smdm.communication.provider.CommunicationItemProviderAdapterFactory;
+import org.sharedmobility.domainmodel.smdm.metamodel.provider.MetamodelItemProviderAdapterFactory;
 
 /**
  * This is an example of a Smdm model editor.
@@ -676,6 +679,9 @@ public class SmdmEditor extends MultiPageEditorPart
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SmdmItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new CommunicationItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new MetamodelItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

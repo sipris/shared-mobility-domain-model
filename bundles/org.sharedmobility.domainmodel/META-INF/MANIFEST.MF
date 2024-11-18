@@ -8,8 +8,17 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.sharedmobility.domainmodel.smdm,
+Export-Package: identifier,
+ identifier.impl,
+ identifier.util,
+ org.sharedmobility.domainmodel.smdm,
+ org.sharedmobility.domainmodel.smdm.communication,
+ org.sharedmobility.domainmodel.smdm.communication.impl,
+ org.sharedmobility.domainmodel.smdm.communication.util,
  org.sharedmobility.domainmodel.smdm.impl,
+ org.sharedmobility.domainmodel.smdm.metamodel,
+ org.sharedmobility.domainmodel.smdm.metamodel.impl,
+ org.sharedmobility.domainmodel.smdm.metamodel.util,
  org.sharedmobility.domainmodel.smdm.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime
