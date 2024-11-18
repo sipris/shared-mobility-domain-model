@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.sharedmobility.domainmodel/src" creationIcons="false"
+    editDirectory="/org.sharedmobility.domainmodel.edit/src" editorDirectory="/org.sharedmobility.domainmodel.editor/src"
+    modelPluginID="org.sharedmobility.domainmodel" modelName="Smdm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    suppressEMFTypes="true" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>smdm.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Smdm" basePackage="org.sharedmobility.domainmodel" disposableProviderFactory="true"
+      ecorePackage="smdm.ecore#/">
+    <genClasses ecoreClass="smdm.ecore#//Domain"/>
+  </genPackages>
+</genmodel:GenModel>

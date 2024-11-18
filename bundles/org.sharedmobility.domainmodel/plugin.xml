@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated smdm -->
+      <package
+            uri="https://github.com/sipris/shared-mobility-domain-model/"
+            class="org.sharedmobility.domainmodel.smdm.SmdmPackage"
+            genModel="model/smdm.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated smdm -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.sharedmobility.domainmodel.smdm.presentation.SmdmModelWizardID"
+            name="%_UI_SmdmModelWizard_label"
+            class="org.sharedmobility.domainmodel.smdm.presentation.SmdmModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SmdmModelFile.gif">
+         <description>%_UI_SmdmModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated smdm -->
+      <editor
+            id="org.sharedmobility.domainmodel.smdm.presentation.SmdmEditorID"
+            name="%_UI_SmdmEditor_label"
+            icon="icons/full/obj16/SmdmModelFile.gif"
+            extensions="smdm"
+            class="org.sharedmobility.domainmodel.smdm.presentation.SmdmEditor"
+            contributorClass="org.sharedmobility.domainmodel.smdm.presentation.SmdmActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
