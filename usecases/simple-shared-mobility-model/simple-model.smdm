@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smdm:Domain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:smdm="https://github.com/sipris/shared-mobility-domain-model/">
+  <participant id="participant1" entityName="participant1" communicationParticipants="participant2"/>
+  <participant id="participant2" entityName="participant2" communicationParticipants="participant1"/>
+</smdm:Domain>
