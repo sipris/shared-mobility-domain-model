@@ -11,6 +11,11 @@
 heapdump.*
 Snap.*
 
+# EMF generated sources
+bundles/org.sharedmobility.domainmodel/src/*
+bundles/org.sharedmobility.domainmodel.edit/src/*
+bundles/org.sharedmobility.domainmodel.editor/src/*
+
 # Package Files
 *.ear
 *.nar
@@ -35,23 +40,3 @@ local.properties
 tmp/
 .eclipse-pmd
 .checkstyle
-
-# Maven
-.mvn/timing.properties
-buildNumber.properties
-dependency-reduced-pom.xml
-pom.xml.next
-pom.xml.releaseBackup
-pom.xml.tag
-pom.xml.versionsBackup
-release.properties
-releng/*/workspace/*
-target/
-
-# Xtend
-*._trace
-*.xtendbin
-xtend-gen/
-
-# JDT
-*.jdt
