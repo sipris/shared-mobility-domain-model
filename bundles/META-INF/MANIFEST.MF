@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transformer
+Bundle-SymbolicName: org.sharedmobility.transformer
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.sharedmobility.transformer.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ org.sharedmobility.domainmodel,
+ tools.mdsd.modelingfoundations.identifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: org.sharedmobility.transformer
+Bundle-ActivationPolicy: lazy
