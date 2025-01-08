@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %Shared Mobility Domain Model
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.sharedmobility.domainmodel;singleton:=true
 Automatic-Module-Name: org.sharedmobility.domainmodel
 Bundle-Version: 0.1.0.qualifier
@@ -8,18 +8,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: identifier,
- identifier.impl,
- identifier.util,
- org.sharedmobility.domainmodel.smdm,
- org.sharedmobility.domainmodel.smdm.communication,
- org.sharedmobility.domainmodel.smdm.communication.impl,
- org.sharedmobility.domainmodel.smdm.communication.util,
- org.sharedmobility.domainmodel.smdm.impl,
- org.sharedmobility.domainmodel.smdm.metamodel,
- org.sharedmobility.domainmodel.smdm.metamodel.impl,
- org.sharedmobility.domainmodel.smdm.metamodel.util,
- org.sharedmobility.domainmodel.smdm.util
+Export-Package: org.sharedmobility.domainmodel,
+ org.sharedmobility.domainmodel.impl,
+ org.sharedmobility.domainmodel.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  tools.mdsd.modelingfoundations.identifier;visibility:=reexport,
  org.eclipse.core.runtime

@@ -7,35 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smdm -->
+      <!-- @generated domainmodel -->
       <package
-            uri="https://github.com/sipris/shared-mobility-domain-model/"
-            class="org.sharedmobility.domainmodel.smdm.SmdmPackage"
-            genModel="model/smdm.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smdm -->
-      <package
-            uri="org.sharedmobility.domainmodel.communication"
-            class="org.sharedmobility.domainmodel.smdm.communication.CommunicationPackage"
-            genModel="model/smdm.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smdm -->
-      <package
-            uri="org.sharedmobility.domainmodel.base.metamodel"
-            class="org.sharedmobility.domainmodel.smdm.metamodel.MetamodelPackage"
-            genModel="model/smdm.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated smdm -->
-      <package
-            uri="http://www.mdsd.tools/modelingfoundations/identifier"
-            class="identifier.IdentifierPackage"
-            genModel="model/smdm.genmodel"/>
+            uri="http://www.example.org/domainmodel"
+            class="org.sharedmobility.domainmodel.DomainmodelPackage"
+            genModel="model/domainmodel.genmodel"/>
    </extension>
 
 </plugin>

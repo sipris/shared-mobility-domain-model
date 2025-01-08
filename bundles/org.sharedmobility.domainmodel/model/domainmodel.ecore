@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="domainmodel" nsURI="http://www.example.org/domainmodel" nsPrefix="domainmodel">
+  <eClassifiers xsi:type="ecore:EClass" name="Domain">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cars" upperBound="-1" eType="#//Vehilce"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="users" upperBound="-1"
+        eType="#//Passenger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drivers" upperBound="-1"
+        eType="#//Driver" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vehilce" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="driver" eType="#//Driver"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="passengers" upperBound="-1"
+        eType="#//Passenger"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Driver" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Passenger" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
+</ecore:EPackage>

@@ -11,11 +11,6 @@
 heapdump.*
 Snap.*
 
-# EMF generated sources
-bundles/org.sharedmobility.domainmodel/src/*
-bundles/org.sharedmobility.domainmodel.edit/src/*
-bundles/org.sharedmobility.domainmodel.editor/src/*
-
 # Package Files
 *.ear
 *.nar
@@ -40,3 +35,6 @@ local.properties
 tmp/
 .eclipse-pmd
 .checkstyle
+
+# Intellij
+.idea/*

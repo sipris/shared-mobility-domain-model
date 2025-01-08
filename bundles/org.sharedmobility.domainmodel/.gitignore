@@ -1,0 +1,4 @@
+# Ignore generated data
+src-gen
+src
+bin

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domainmodel:Domain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domainmodel="http://www.example.org/domainmodel">
+  <cars id="_CEqEwL1BEe-4SsMY2fpjJw" entityName="Lada 3" driver="_SGdUcr1BEe-4SsMY2fpjJw" passengers="_IxRtwL1BEe-4SsMY2fpjJw"/>
+  <users id="_IxRtwL1BEe-4SsMY2fpjJw" entityName="Linda"/>
+  <drivers id="_SGdUcr1BEe-4SsMY2fpjJw" entityName="Tamara"/>
+</domainmodel:Domain>

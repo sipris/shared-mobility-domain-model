@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.sharedmobility.domainmodel/src" creationIcons="false"
+    editDirectory="/org.sharedmobility.domainmodel.edit/src" editorDirectory="/org.sharedmobility.domainmodel.editor/src"
+    modelPluginID="org.sharedmobility.domainmodel" modelName="Domainmodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    suppressEMFTypes="true" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>domainmodel.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Domainmodel" basePackage="org.sharedmobility" disposableProviderFactory="true"
+      ecorePackage="domainmodel.ecore#/">
+    <genClasses ecoreClass="domainmodel.ecore#//Domain">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Domain/cars"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Domain/users"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Domain/drivers"/>
+    </genClasses>
+    <genClasses ecoreClass="domainmodel.ecore#//Vehilce">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Vehilce/driver"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Vehilce/passengers"/>
+    </genClasses>
+    <genClasses ecoreClass="domainmodel.ecore#//Driver"/>
+    <genClasses ecoreClass="domainmodel.ecore#//Passenger"/>
+  </genPackages>
+</genmodel:GenModel>
