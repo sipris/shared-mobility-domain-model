@@ -12,15 +12,62 @@
   <genPackages prefix="Domainmodel" basePackage="org.sharedmobility" disposableProviderFactory="true"
       ecorePackage="domainmodel.ecore#/">
     <genClasses ecoreClass="domainmodel.ecore#//Domain">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Domain/cars"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Domain/users"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Domain/vehicles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Domain/participants"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Domain/drivers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Domain/publicAgencies"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Domain/mobilityServiceProvider"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Domain/roadsideUnits"/>
     </genClasses>
-    <genClasses ecoreClass="domainmodel.ecore#//Vehilce">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Vehilce/driver"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference domainmodel.ecore#//Vehilce/passengers"/>
-    </genClasses>
-    <genClasses ecoreClass="domainmodel.ecore#//Driver"/>
-    <genClasses ecoreClass="domainmodel.ecore#//Passenger"/>
+    <nestedGenPackages prefix="Communication" basePackage="org.sharedmobility.domainmodel"
+        disposableProviderFactory="true" ecorePackage="domainmodel.ecore#//communication">
+      <genClasses image="false" ecoreClass="domainmodel.ecore#//communication/NetworkConnector"/>
+      <genClasses image="false" ecoreClass="domainmodel.ecore#//communication/NetworkCommunicator"/>
+      <genClasses image="false" ecoreClass="domainmodel.ecore#//communication/DirectCommunicator">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference domainmodel.ecore#//communication/DirectCommunicator/communicationPartmers"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Ridepooling" basePackage="org.sharedmobility.domainmodel"
+        disposableProviderFactory="true" ecorePackage="domainmodel.ecore#//ridepooling">
+      <genClasses ecoreClass="domainmodel.ecore#//ridepooling/Driver"/>
+      <genClasses ecoreClass="domainmodel.ecore#//ridepooling/User"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Infrastructure" basePackage="org.sharedmobility.domainmodel"
+        disposableProviderFactory="true" ecorePackage="domainmodel.ecore#//infrastructure">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="domainmodel.ecore#//infrastructure/TraficLightState">
+        <genEnumLiterals ecoreEnumLiteral="domainmodel.ecore#//infrastructure/TraficLightState/stop"/>
+        <genEnumLiterals ecoreEnumLiteral="domainmodel.ecore#//infrastructure/TraficLightState/go"/>
+      </genEnums>
+      <genClasses ecoreClass="domainmodel.ecore#//infrastructure/TraficLight">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute domainmodel.ecore#//infrastructure/TraficLight/state"/>
+      </genClasses>
+      <genClasses ecoreClass="domainmodel.ecore#//infrastructure/SpeedLimit">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute domainmodel.ecore#//infrastructure/SpeedLimit/limit"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="domainmodel.ecore#//infrastructure/RoadsideUnit"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Base" basePackage="org.sharedmobility.domainmodel"
+        disposableProviderFactory="true" ecorePackage="domainmodel.ecore#//base">
+      <genClasses image="false" ecoreClass="domainmodel.ecore#//base/Vehilce">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference domainmodel.ecore#//base/Vehilce/driver"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference domainmodel.ecore#//base/Vehilce/passengers"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="domainmodel.ecore#//base/Participant">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference domainmodel.ecore#//base/Participant/location"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference domainmodel.ecore#//base/Participant/credentials"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference domainmodel.ecore#//base/Participant/bankData"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="domainmodel.ecore#//base/PublicAgency"/>
+      <genClasses image="false" ecoreClass="domainmodel.ecore#//base/MobilityServiceProvider">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference domainmodel.ecore#//base/MobilityServiceProvider/fleet"/>
+      </genClasses>
+      <genClasses ecoreClass="domainmodel.ecore#//base/Address"/>
+      <genClasses ecoreClass="domainmodel.ecore#//base/Credentials"/>
+      <genClasses ecoreClass="domainmodel.ecore#//base/BankData"/>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

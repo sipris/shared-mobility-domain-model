@@ -2,18 +2,72 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="domainmodel" nsURI="http://www.example.org/domainmodel" nsPrefix="domainmodel">
   <eClassifiers xsi:type="ecore:EClass" name="Domain">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cars" upperBound="-1" eType="#//Vehilce"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="users" upperBound="-1"
-        eType="#//Passenger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vehicles" upperBound="-1"
+        eType="#//base/Vehilce" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participants" upperBound="-1"
+        eType="#//base/Participant" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="drivers" upperBound="-1"
-        eType="#//Driver" containment="true"/>
+        eType="#//ridepooling/Driver" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publicAgencies" upperBound="-1"
+        eType="#//base/PublicAgency"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mobilityServiceProvider"
+        upperBound="-1" eType="#//base/MobilityServiceProvider"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roadsideUnits" upperBound="-1"
+        eType="#//infrastructure/RoadsideUnit"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Vehilce" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="driver" eType="#//Driver"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="passengers" upperBound="-1"
-        eType="#//Passenger"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Driver" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Passenger" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
+  <eSubpackages name="communication" nsURI="http://www.example.org/domainmodel/communication"
+      nsPrefix="communication">
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkConnector" abstract="true"
+        interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkCommunicator" abstract="true"
+        interface="true" eSuperTypes="#//communication/NetworkConnector"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DirectCommunicator" abstract="true"
+        interface="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="communicationPartmers"
+          upperBound="-1" eType="#//communication/DirectCommunicator"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="ridepooling" nsURI="http://www.example.org/domainmodel/ridepooling"
+      nsPrefix="ridepooling">
+    <eClassifiers xsi:type="ecore:EClass" name="Driver" eSuperTypes="#//base/Participant"/>
+    <eClassifiers xsi:type="ecore:EClass" name="User" eSuperTypes="#//base/Participant"/>
+  </eSubpackages>
+  <eSubpackages name="infrastructure" nsURI="http://www.example.org/domainmodel/infrastructure"
+      nsPrefix="infrastructure">
+    <eClassifiers xsi:type="ecore:EClass" name="TraficLight" eSuperTypes="#//infrastructure/RoadsideUnit">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//infrastructure/TraficLightState"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SpeedLimit" eSuperTypes="#//infrastructure/RoadsideUnit">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="TraficLightState">
+      <eLiterals name="stop"/>
+      <eLiterals name="go"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RoadsideUnit" abstract="true" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity #//communication/NetworkCommunicator #//communication/DirectCommunicator"/>
+  </eSubpackages>
+  <eSubpackages name="base" nsURI="http://www.example.org/domainmodel/base" nsPrefix="base">
+    <eClassifiers xsi:type="ecore:EClass" name="Vehilce" abstract="true" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity #//communication/DirectCommunicator #//communication/NetworkCommunicator">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="driver" eType="#//ridepooling/Driver"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="passengers" upperBound="-1"
+          eType="#//ridepooling/User"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Participant" abstract="true" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity #//communication/DirectCommunicator #//communication/NetworkCommunicator">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//base/Address"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="credentials" eType="#//base/Credentials"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bankData" eType="#//base/BankData"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PublicAgency" abstract="true" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity #//communication/NetworkCommunicator"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MobilityServiceProvider" abstract="true"
+        eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity #//communication/NetworkCommunicator">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fleet" upperBound="-1"
+          eType="#//base/Vehilce"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Address"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Credentials"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BankData"/>
+  </eSubpackages>
 </ecore:EPackage>

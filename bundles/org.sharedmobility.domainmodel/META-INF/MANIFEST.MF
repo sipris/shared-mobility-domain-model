@@ -9,7 +9,19 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.sharedmobility.domainmodel,
+ org.sharedmobility.domainmodel.base,
+ org.sharedmobility.domainmodel.base.impl,
+ org.sharedmobility.domainmodel.base.util,
+ org.sharedmobility.domainmodel.communication,
+ org.sharedmobility.domainmodel.communication.impl,
+ org.sharedmobility.domainmodel.communication.util,
  org.sharedmobility.domainmodel.impl,
+ org.sharedmobility.domainmodel.infrastructure,
+ org.sharedmobility.domainmodel.infrastructure.impl,
+ org.sharedmobility.domainmodel.infrastructure.util,
+ org.sharedmobility.domainmodel.ridepooling,
+ org.sharedmobility.domainmodel.ridepooling.impl,
+ org.sharedmobility.domainmodel.ridepooling.util,
  org.sharedmobility.domainmodel.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  tools.mdsd.modelingfoundations.identifier;visibility:=reexport,

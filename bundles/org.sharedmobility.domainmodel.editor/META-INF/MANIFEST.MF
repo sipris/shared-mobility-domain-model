@@ -9,7 +9,10 @@ Bundle-Activator: org.sharedmobility.domainmodel.presentation.DomainmodelEditorP
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.sharedmobility.domainmodel.presentation
+Export-Package: org.sharedmobility.domainmodel.base.presentation,
+ org.sharedmobility.domainmodel.infrastructure.presentation,
+ org.sharedmobility.domainmodel.presentation,
+ org.sharedmobility.domainmodel.ridepooling.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.sharedmobility.domainmodel.edit;visibility:=reexport,

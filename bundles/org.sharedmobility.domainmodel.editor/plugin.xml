@@ -34,4 +34,88 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated domainmodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.sharedmobility.domainmodel.ridepooling.presentation.RidepoolingModelWizardID"
+            name="%_UI_RidepoolingModelWizard_label"
+            class="org.sharedmobility.domainmodel.ridepooling.presentation.RidepoolingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RidepoolingModelFile.gif">
+         <description>%_UI_RidepoolingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated domainmodel -->
+      <editor
+            id="org.sharedmobility.domainmodel.ridepooling.presentation.RidepoolingEditorID"
+            name="%_UI_RidepoolingEditor_label"
+            icon="icons/full/obj16/RidepoolingModelFile.gif"
+            extensions="ridepooling"
+            class="org.sharedmobility.domainmodel.ridepooling.presentation.RidepoolingEditor"
+            contributorClass="org.sharedmobility.domainmodel.ridepooling.presentation.RidepoolingActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated domainmodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.sharedmobility.domainmodel.infrastructure.presentation.InfrastructureModelWizardID"
+            name="%_UI_InfrastructureModelWizard_label"
+            class="org.sharedmobility.domainmodel.infrastructure.presentation.InfrastructureModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/InfrastructureModelFile.gif">
+         <description>%_UI_InfrastructureModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated domainmodel -->
+      <editor
+            id="org.sharedmobility.domainmodel.infrastructure.presentation.InfrastructureEditorID"
+            name="%_UI_InfrastructureEditor_label"
+            icon="icons/full/obj16/InfrastructureModelFile.gif"
+            extensions="infrastructure"
+            class="org.sharedmobility.domainmodel.infrastructure.presentation.InfrastructureEditor"
+            contributorClass="org.sharedmobility.domainmodel.infrastructure.presentation.InfrastructureActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated domainmodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.sharedmobility.domainmodel.base.presentation.BaseModelWizardID"
+            name="%_UI_BaseModelWizard_label"
+            class="org.sharedmobility.domainmodel.base.presentation.BaseModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BaseModelFile.gif">
+         <description>%_UI_BaseModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated domainmodel -->
+      <editor
+            id="org.sharedmobility.domainmodel.base.presentation.BaseEditorID"
+            name="%_UI_BaseEditor_label"
+            icon="icons/full/obj16/BaseModelFile.gif"
+            extensions="base"
+            class="org.sharedmobility.domainmodel.base.presentation.BaseEditor"
+            contributorClass="org.sharedmobility.domainmodel.base.presentation.BaseActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

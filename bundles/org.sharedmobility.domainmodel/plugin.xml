@@ -14,4 +14,36 @@
             genModel="model/domainmodel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated domainmodel -->
+      <package
+            uri="http://www.example.org/domainmodel/communication"
+            class="org.sharedmobility.domainmodel.communication.CommunicationPackage"
+            genModel="model/domainmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated domainmodel -->
+      <package
+            uri="http://www.example.org/domainmodel/ridepooling"
+            class="org.sharedmobility.domainmodel.ridepooling.RidepoolingPackage"
+            genModel="model/domainmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated domainmodel -->
+      <package
+            uri="http://www.example.org/domainmodel/infrastructure"
+            class="org.sharedmobility.domainmodel.infrastructure.InfrastructurePackage"
+            genModel="model/domainmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated domainmodel -->
+      <package
+            uri="http://www.example.org/domainmodel/base"
+            class="org.sharedmobility.domainmodel.base.BasePackage"
+            genModel="model/domainmodel.genmodel"/>
+   </extension>
+
 </plugin>
